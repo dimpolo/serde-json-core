@@ -3,7 +3,7 @@
 use core::mem::MaybeUninit;
 use core::{fmt, str};
 
-use serde::ser;
+use serde::{ser, Serialize};
 use serde::ser::SerializeStruct as _;
 
 #[cfg(feature = "heapless")]
@@ -21,7 +21,7 @@ mod struct_;
 pub type Result<T> = ::core::result::Result<T, Error>;
 
 /// This type represents all possible errors that can occur when serializing JSON data
-#[derive(Debug, PartialEq, Eq, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, Copy, Clone, Serialize)]
 #[non_exhaustive]
 pub enum Error {
     /// Buffer is full

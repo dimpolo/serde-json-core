@@ -21,6 +21,7 @@ optional = true
 
 [dependencies.serde]
 default-features = false
+features = ["derive"]
 version = "1.0.100"
 
 [dev-dependencies]
